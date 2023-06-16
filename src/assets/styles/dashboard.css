@@ -1,0 +1,42 @@
+.header-section {
+  display: flex;
+  position: relative;
+}
+
+.header-section .add-new-chart-btn {
+  position: absolute;
+  right: 0;
+  background-color: #0d076a;
+  border-radius: 5px !important;
+  outline: none !important;
+  color: white;
+  transition: 0.4s;
+}
+
+.header-section .add-new-chart-btn:hover {
+  background-color: #0d076a;
+  border-radius: 5px !important;
+  outline: none !important;
+  color: white;
+  opacity: 0.8;
+}
+.divider {
+  margin-top: 1px !important;
+}
+
+.modal-header {
+  background-color: #0d076a !important;
+  color: white;
+}
+
+.add-chart-modal-body {
+  color: #0d076a !important;
+}
+
+.btn-apply {
+  background-color: #0d076a !important;
+  border-radius: 5px !important;
+  width: 120px !important;
+  outline: none !important;
+  color: white !important;
+}
