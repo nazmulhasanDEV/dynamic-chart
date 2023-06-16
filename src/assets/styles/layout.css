@@ -2,9 +2,9 @@
   background-color: #0d076a !important;
 }
 
-.top-navbar .container {
+/* .top-navbar .container {
   position: relative;
-}
+} */
 
 .top-navbar .navbar-brand {
   color: #fff;
@@ -29,9 +29,16 @@
   cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
-  #navbar-nav {
-    position: absolute;
-    right: 0;
-  }
+#navbar-nav {
+  position: relative;
+  /* background-color: green !important; */
+}
+.navbar-nav {
+  position: absolute !important;
+  right: 0 !important;
+}
+
+.navbar-toggler {
+  visibility: hidden !important;
+  display: none !important;
 }

@@ -9,11 +9,11 @@ const TopNavBar = () => {
         <Navbar.Brand href="#">Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
 
-        <Navbar.Collapse id="navbar-nav">
+        <Navbar id="navbar-nav">
           <Nav>
             <li class="nav-item dropdown">
               <h6
-                class="text-white dropdown-toggle pt-3"
+                class="text-white dropdown-toggle pt-4"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
@@ -35,7 +35,7 @@ const TopNavBar = () => {
               />
             </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
+        </Navbar>
       </Container>
     </Navbar>
   );
