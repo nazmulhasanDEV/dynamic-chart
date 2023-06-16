@@ -1,8 +1,12 @@
+import LoginRegister from "./views/components/Login";
+import TopNavBar from "./views/layout";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+    <>
+      {/* <LoginRegister /> */}
+      <TopNavBar />
+    </>
   );
 }
 

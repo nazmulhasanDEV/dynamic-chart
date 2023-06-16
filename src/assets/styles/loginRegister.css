@@ -1,0 +1,22 @@
+.login-register-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-form {
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.toggle-form:hover {
+  text-decoration: underline;
+}
+
+.login-register-submit-btn {
+  background-color: #0d076a !important;
+}
