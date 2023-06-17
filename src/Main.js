@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import LoginRegister from "./views/components/login/Login";
 import RequireAuth from "./auth/RequireAuth";
 import Home from "./views/components/Home";
+import NotFound from "./views/components/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </>
   );

@@ -5,17 +5,21 @@ import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./auth/AuthContext";
 import { BrowserRouter } from "react-router-dom";
 
-// bootstrap css file
+// bootstrap and custom css file
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/styles/dashboard.css";
+import "./assets/styles/layout.css";
+import "./assets/styles/loginRegister.css";
+import "./assets/styles/style.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
         <App />
-      </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

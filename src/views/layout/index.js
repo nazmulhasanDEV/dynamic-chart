@@ -3,7 +3,6 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 import { useAuth } from "../../auth/AuthContext";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import "../../assets/styles/layout.css";
 
 const TopNavBar = () => {
   const { setAuth } = useAuth();
@@ -32,7 +31,7 @@ const TopNavBar = () => {
                 Nazmul Hasan
               </h6>
               <ul class="dropdown-menu dropdown-menu-white">
-                <li onClick={logoutHandler}>
+                <li onClick={() => logoutHandler()}>
                   <a class="dropdown-item" href="#">
                     Logout
                   </a>

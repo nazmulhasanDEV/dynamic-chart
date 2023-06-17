@@ -6,16 +6,13 @@ import Cookies from "js-cookie";
 import axiosConfig from "../../../utils/axiosConfig";
 import { useAuth } from "../../../auth/AuthContext";
 
-// css file for login page
-import "../../../assets/styles/loginRegister.css";
-
 const LOGIN_URL = "/auth/api/login/";
 
 const LoginRegister = () => {
   const { auth, setAuth } = useAuth();
   const [loginCredentials, setLoginCredentials] = useState({
-    email: null,
-    password: null,
+    email: "",
+    password: "",
   });
   const [isLoginRequestSent, setIsLoginRequestSent] = useState(false);
   const location = useLocation();
@@ -49,7 +46,7 @@ const LoginRegister = () => {
         <Col md={4}>
           <div className="login-register-form">
             <h2 className="text-center">Log In</h2>
-            <Form onSubmit={handleLoginRequest}>
+            <Form>
               <Form.Group controlId="formBasicEmail" className="mt-3">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
@@ -86,6 +83,7 @@ const LoginRegister = () => {
               <Button
                 type="submit"
                 className="form-control login-register-submit-btn mt-4"
+                onClick={handleLoginRequest}
                 disabled={
                   !loginCredentials?.email ||
                   !loginCredentials?.password ||
