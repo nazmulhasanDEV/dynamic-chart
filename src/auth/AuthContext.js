@@ -7,14 +7,16 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
   const accessToken = Cookies.get("jwt") || null;
-  const exp = jwtDecode(accessToken)?.exp || null;
+  if (accessToken) {
+    const exp = jwtDecode(accessToken || "")?.exp || null;
 
-  let currentDate = new Date();
-  let timeNow = currentDate.getTime() + 2 * 23.8 * 60 * 60 * 1000;
+    let currentDate = new Date();
+    let timeNow = currentDate.getTime() + 2 * 23.8 * 60 * 60 * 1000;
 
-  if (exp) {
-    if (exp * 1000 < timeNow) {
-      Cookies.remove("jwt");
+    if (exp) {
+      if (exp * 1000 < timeNow) {
+        Cookies.remove("jwt");
+      }
     }
   }
 

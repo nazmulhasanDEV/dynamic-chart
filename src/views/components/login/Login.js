@@ -13,7 +13,6 @@ const LOGIN_URL = "/auth/api/login/";
 
 const LoginRegister = () => {
   const { auth, setAuth } = useAuth();
-  console.log(auth);
   const [loginCredentials, setLoginCredentials] = useState({
     email: null,
     password: null,
@@ -22,14 +21,12 @@ const LoginRegister = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
-  // console.log(loginCredentials);
   const handleLoginRequest = async (e) => {
     e.preventDefault();
     setIsLoginRequestSent(true);
     // Handle form submission logic
     const response = await axiosConfig.post(LOGIN_URL, loginCredentials);
     if (response?.data?.access) {
-      console.log(response?.data);
       Cookies.set("jwt", response?.data?.access, {
         expires: 1,
         secure: true,
@@ -66,6 +63,7 @@ const LoginRegister = () => {
                       [e.target.name]: e.target.value,
                     })
                   }
+                  autoFocus={true}
                   required
                 />
               </Form.Group>

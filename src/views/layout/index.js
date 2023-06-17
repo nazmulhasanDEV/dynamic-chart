@@ -1,8 +1,20 @@
 import React from "react";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
+import { useAuth } from "../../auth/AuthContext";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 import "../../assets/styles/layout.css";
 
 const TopNavBar = () => {
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    navigate("/login", { replace: true });
+    setAuth({});
+    Cookies.remove("jwt");
+    navigate("/login", { replace: true });
+  };
   return (
     <Navbar expand="lg" className="top-navbar">
       <Container className="container">
@@ -20,7 +32,7 @@ const TopNavBar = () => {
                 Nazmul Hasan
               </h6>
               <ul class="dropdown-menu dropdown-menu-white">
-                <li>
+                <li onClick={logoutHandler}>
                   <a class="dropdown-item" href="#">
                     Logout
                   </a>

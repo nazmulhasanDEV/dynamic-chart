@@ -1,16 +1,22 @@
 import { Routes, Route } from "react-router-dom";
 
 import LoginRegister from "./views/components/login/Login";
-import TopNavBar from "./views/layout";
-import ChartDashboard from "./views/components/dashboard/index";
+import RequireAuth from "./auth/RequireAuth";
+import Home from "./views/components/Home";
 
 function App() {
   return (
     <>
-      <TopNavBar />
       <Routes>
         <Route path="/login" element={<LoginRegister />} />
-        <Route path="/" element={<ChartDashboard />} />
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </>
   );
