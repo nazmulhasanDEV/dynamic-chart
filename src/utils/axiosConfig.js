@@ -11,11 +11,11 @@ const axiosConfig = axios.create({
 // Request interceptor
 axiosConfig.interceptors.request.use(
   (config) => {
-    console.log(config);
+    // console.log(config);
     return config;
   },
   (error) => {
-    console.log(error);
+    // console.log(error);
     return Promise.reject(error);
   }
 );
@@ -23,11 +23,11 @@ axiosConfig.interceptors.request.use(
 // Response interceptor
 axiosConfig.interceptors.response.use(
   (response) => {
-    console.log(response);
+    // console.log(response);
     return response;
   },
   (error) => {
-    console.log(error);
+    // console.log(error);
     return Promise.reject(error);
   }
 );
