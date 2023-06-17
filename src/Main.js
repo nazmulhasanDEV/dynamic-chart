@@ -1,13 +1,17 @@
-import LoginRegister from "./views/components/Login";
+import { Routes, Route } from "react-router-dom";
+
+import LoginRegister from "./views/components/login/Login";
 import TopNavBar from "./views/layout";
-import Charts from "./views/components/dashboard";
+import ChartDashboard from "./views/components/dashboard/index";
 
 function App() {
   return (
     <>
-      {/* <LoginRegister /> */}
       <TopNavBar />
-      <Charts />
+      <Routes>
+        <Route path="/login" element={<LoginRegister />} />
+        <Route path="/" element={<ChartDashboard />} />
+      </Routes>
     </>
   );
 }
