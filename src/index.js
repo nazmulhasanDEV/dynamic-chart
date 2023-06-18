@@ -20,7 +20,7 @@ root.render(
       <AuthProvider>
         <SnackbarProvider
           maxSnack={3}
-          autoHideDuration={3000}
+          autoHideDuration={2000}
           anchorOrigin={{
             vertical: "top",
             horizontal: "right",

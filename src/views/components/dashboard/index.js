@@ -4,6 +4,7 @@ import { size } from "lodash";
 import Plot from "react-plotly.js";
 import DashboardContext from "./context/DashboardContext";
 import AddChartModal from "./modal/AddChart";
+import EditChartModal from "./modal/EditChartModal";
 
 const ChartDashboard = () => {
   const [charts, setCharts] = useState([]);
@@ -58,6 +59,15 @@ const ChartDashboard = () => {
                     config={config}
                     className="embed-responsive-item"
                   />
+                  <button
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-chart-modal"
+                    data-bs-whatever="@getbootstrap"
+                    className="btn chart-edit-btn"
+                  >
+                    Edit
+                  </button>
                 </div>
               </Col>
             ))
@@ -67,6 +77,7 @@ const ChartDashboard = () => {
         </Row>
         {/* charts ends */}
         <AddChartModal id="add-new-chart-modal" />
+        <EditChartModal id="edit-chart-modal" />
       </Container>
     </DashboardContext.Provider>
   );

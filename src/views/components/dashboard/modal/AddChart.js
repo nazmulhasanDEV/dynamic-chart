@@ -2,15 +2,12 @@ import { useContext, useState, useRef } from "react";
 import { size } from "lodash";
 import { useSnackbar } from "notistack";
 import DashboardContext from "../context/DashboardContext";
+import { allowedCharts } from "../helpers/allowedCharts";
 
 const AddChartModal = ({ id }) => {
   const { enqueueSnackbar } = useSnackbar();
   const ref = useRef();
-  const allowedCharts = [
-    { id: 1, chartName: "Bar chart" },
-    { id: 2, chartName: "Pie chart" },
-    { id: 3, chartName: "Line chart" },
-  ];
+
   const { charts, setCharts } = useContext(DashboardContext);
 
   const [newChartInfo, setNewChartInfo] = useState({
@@ -34,6 +31,7 @@ const AddChartModal = ({ id }) => {
         ],
         x: [90, 40, 60, 80, 75, 92, 87, 73],
         type: "bar",
+        marker: { color: "#0d076a" },
         orientation: "h",
         name: newChartInfo?.chartName,
       };

@@ -34,15 +34,3 @@
   font-size: 16px;
   color: #888;
 }
-
-.chart-container {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  zoom: 80%;
-}
-
-@media only screen and (max-width: 500px) {
-  .chart-container {
-    zoom: 50%;
-  }
-}
