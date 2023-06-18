@@ -1,6 +1,6 @@
 how to run this project in local host from remote repository
 
-1. git clone repo link
+1. git clone repo link: "https://github.com/nazmulhasanDEV/dynamic-chart.git"
 2. Then got to the project directory and run "npm install" or "yarn install" based on your package manager
 3. Run this command: "yarn starts" or "npm run" based on your package manager
 4. Now you are ready to go
