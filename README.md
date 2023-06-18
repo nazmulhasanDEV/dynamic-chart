@@ -1,3 +1,14 @@
+how to run this project in local host from remote repository
+
+1. git clone repo link
+2. Then got to the project directory and run "npm install" or "yarn install" based on your package manager
+3. Run this command: "yarn starts" or "npm run" based on your package manager
+4. Now you are ready to go
+
+if going to use downloaded file instead of cloning repo then skip step number one. And follow rest of the steps as describe above.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
