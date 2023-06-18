@@ -1,10 +1,11 @@
 import { useContext, useState, useRef } from "react";
 import { size } from "lodash";
+import { useSnackbar } from "notistack";
 import DashboardContext from "../context/DashboardContext";
 
 const AddChartModal = ({ id }) => {
+  const { enqueueSnackbar } = useSnackbar();
   const ref = useRef();
-  console.log("ref: ", ref);
   const allowedCharts = [
     { id: 1, chartName: "Bar chart" },
     { id: 2, chartName: "Pie chart" },
@@ -18,7 +19,6 @@ const AddChartModal = ({ id }) => {
   });
 
   const addNewChartHanlder = (newChartInfo) => {
-    console.log(ref);
     let newChart;
     if (newChartInfo?.chartType === "1" || newChartInfo?.chartType === 1) {
       newChart = {
@@ -65,6 +65,9 @@ const AddChartModal = ({ id }) => {
       chartType: 1,
     });
     ref.current?.click();
+    enqueueSnackbar("New chart has been added successfully", {
+      variant: "success",
+    });
   };
 
   return (

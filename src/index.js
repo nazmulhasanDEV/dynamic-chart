@@ -4,6 +4,7 @@ import App from "./Main";
 import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./auth/AuthContext";
 import { BrowserRouter } from "react-router-dom";
+import { SnackbarProvider } from "notistack";
 
 // bootstrap and custom css file
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,7 +18,16 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <SnackbarProvider
+          maxSnack={3}
+          autoHideDuration={3000}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          <App />
+        </SnackbarProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
